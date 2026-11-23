@@ -21,7 +21,7 @@ button,input{font:inherit}button{cursor:pointer}.app{max-width:1100px;margin:aut
 @media(max-width:760px){.app{padding:17px 15px 110px}.hero{min-height:280px;padding:24px}.grid{grid-template-columns:1fr}.pillars{grid-template-columns:repeat(2,1fr)}.panel{padding:18px}.stats{margin-top:16px}}
 @media(min-width:761px){.hero{min-height:360px}.tasks{grid-template-columns:1fr 1fr}}
 
-.view[hidden]{display:none!important}.view{display:grid;gap:16px}.ideas-widget{margin-top:16px}.idea-preview{display:grid;gap:8px}.idea-chip{display:flex;gap:12px;align-items:center;padding:11px 13px;background:#ffffff06;border:1px solid #ffffff0d;border-radius:13px;color:#dcecf8;font-size:12px;min-height:42px}.idea-chip em{font:600 10px 'DM Sans';color:var(--ice);font-style:normal}.idea-chip.empty{color:var(--muted);padding:11px 13px}.picon{width:28px;height:28px;display:grid;place-items:center;color:var(--ice)}.picon svg,.nav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.nav button strong{height:23px;display:grid;place-items:center}.nav button svg{width:20px;height:20px}.pillar .picon{font-size:0}.idea-fields{display:grid;gap:12px;margin:18px 0}.idea-fields label{display:grid;gap:7px;color:var(--ice);font:600 11px 'DM Sans'}.idea-fields input{width:100%;background:#071726;border:1px solid var(--line);border-radius:12px;padding:13px;color:var(--white);outline:none;font:400 13px 'IBM Plex Sans Arabic',sans-serif}.idea-fields input:focus{border-color:#a9d8f577}.ideas-widget .ghost{font-size:10px;padding:8px 12px}.idea-chip.empty{padding:11px 13px;text-align:right;min-height:42px}
+.view[hidden]{display:none!important}.view{display:grid;gap:16px}.ideas-widget{margin-top:16px}.idea-preview{display:grid;gap:8px}.idea-chip{display:flex;gap:12px;align-items:center;padding:11px 13px;background:#ffffff06;border:1px solid #ffffff0d;border-radius:13px;color:#dcecf8;font-size:12px;min-height:42px}.idea-chip em{font:600 10px 'DM Sans';color:var(--ice);font-style:normal}.idea-chip.empty{color:var(--muted);padding:11px 13px}.picon{width:28px;height:28px;display:grid;place-items:center;color:var(--ice)}.picon svg,.nav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.nav button strong{height:23px;display:grid;place-items:center}.nav button svg{width:20px;height:20px}.pillar .picon{font-size:0}.idea-fields{display:grid;gap:12px;margin:18px 0}.idea-fields label{display:grid;gap:7px;color:var(--ice);font:600 11px 'DM Sans'}.idea-fields input{width:100%;background:#071726;border:1px solid var(--line);border-radius:12px;padding:13px;color:var(--white);outline:none;font:400 13px 'IBM Plex Sans Arabic',sans-serif}.idea-fields input:focus{border-color:#a9d8f577}.ideas-widget .ghost{font-size:10px;padding:8px 12px}.idea-chip.empty{padding:11px 13px;text-align:right;min-height:42px}.idea-open{width:100%;text-align:right;color:inherit;cursor:pointer}.idea-open .panel-head{margin-bottom:12px}.idea-arrow{color:var(--ice);font-size:20px}.idea-fields{display:grid;gap:10px;margin:17px 0}.idea-fields label{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:8px;color:var(--ice);font:600 11px 'DM Sans'}.idea-fields input{width:100%;background:#071726;border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--white);outline:none;font:400 13px 'IBM Plex Sans Arabic',sans-serif}.idea-fields input:focus{border-color:#a9d8f577}.priority-remove{border:0;background:transparent;color:#8ca5ba;font-size:18px;padding:4px}
 </style>
 </head>
 <body>
@@ -29,53 +29,45 @@ button,input{font:inherit}button{cursor:pointer}.app{max-width:1100px;margin:aut
 <header class="top"><div class="brand"><div class="mark"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7 4 17M8 3l4 3 4-3M8 21l4-3 4 3M3 11l1-4 4-1M21 11l-1-4-4-1M3 13l1 4 4 1M21 13l-1 4-4 1"/></svg></div><div><b>WINTER ARC</b><small>90 DAYS · PERSONAL RESET</small></div></div><button class="iconbtn" id="settings" aria-label="الإعدادات">⋯</button></header>
 
 <div id="dashboard">
-8940<section class="hero"><div class="hero-content"><div class="eyebrow">THE WORK HAPPENS IN SILENCE</div><h1>WINTER<br>ARC.</h1><p>توقّف عن انتظار اللحظة المناسبة. ابدأ ببناء نفسك، خطوة واحدة كل يوم.</p><div class="quote">1% BETTER EVERY DAY.</div></div></section>
-  <section class="panel">
-    <div class="panel-head"><h2>رحلتك · YOUR JOURNEY</h2><span class="sub" id="dateLabel"></span></div>
-    <div class="dayrow"><div><div class="daynum" id="dayNumber">— <span>/ 90 DAY</span></div><div class="sub" id="remaining">لم تبدأ الرحلة بعد</div></div><div class="percent" id="percent">0%</div></div>
-    <div class="track"><div class="fill" id="progressFill"></div></div>
-    <div class="trackmeta"><span>إنجاز أهداف اليوم</span><span id="completedCount">0 / 6</span></div>
-    <div class="stats"><div class="stat"><b id="streak">0</b><span>أيام متتالية</span></div><div class="stat"><b id="weekCount">0/6</b><span>إنجاز اليوم</span></div><div class="stat"><b id="leftDays">90</b><span>يوماً متبقياً</span></div></div>
-  </section>
-  <section class="panel ideas-widget">
-    <div class="panel-head"><div><span class="eyebrow">IDEA VAULT</span><h2 style="margin-top:5px">أهم 3 أفكار</h2></div><button class="ghost" id="editIdeas">تعديل الأفكار</button></div>
-    <div class="idea-preview" id="ideaPreview"></div>
-  </section>
+<section id="homeView" class="view">
+<section class="hero"><div class="hero-content"><div class="eyebrow">THE WORK HAPPENS IN SILENCE</div><h1>WINTER<br>ARC.</h1><p>توقّف عن انتظار اللحظة المناسبة. ابدأ ببناء نفسك، خطوة واحدة كل يوم.</p><div class="quote">1% BETTER EVERY DAY.</div></div></section>
+<section class="panel">
+<div class="panel-head"><h2>رحلتك · YOUR JOURNEY</h2><span class="sub" id="dateLabel"></span></div>
+<div class="dayrow"><div><div class="daynum" id="dayNumber">— <span>/ 90 DAY</span></div><div class="sub" id="remaining">لم تبدأ الرحلة بعد</div></div><div class="percent" id="percent">0%</div></div>
+<div class="track"><div class="fill" id="progressFill"></div></div>
+<div class="trackmeta"><span>إنجاز أهداف اليوم</span><span id="completedCount">0 / 6</span></div>
+<div class="stats"><div class="stat"><b id="streak">0</b><span>أيام متتالية</span></div><div class="stat"><b id="weekCount">0/6</b><span>إنجاز اليوم</span></div><div class="stat"><b id="leftDays">90</b><span>يوماً متبقياً</span></div></div>
+</section>
+<button class="panel ideas-widget idea-open" id="openIdeas" type="button">
+<div class="panel-head"><div><span class="eyebrow">MY PRIORITIES</span><h2 style="margin-top:5px">أهم 3 أشياء أريد إنجازها</h2></div><span class="idea-arrow">↗</span></div>
+<div class="idea-preview" id="ideaPreview"></div><span class="sub">اضغط لإضافة مهامك أو تعديلها</span>
+</button>
 </section>
 <section id="dailyView" class="view" hidden>
-  <section class="panel"><div class="panel-head"><h2>بوصلة اليوم · TODAY</h2><span class="tag">DAY FOCUS</span></div><div id="tasks" class="tasks"></div></section>
+<section class="panel"><div class="panel-head"><h2>بوصلة اليوم · TODAY</h2><span class="tag">DAY FOCUS</span></div><div id="tasks" class="tasks"></div></section>
 </section>
 <section id="journeyView" class="view" hidden>
-  <section class="panel"><div class="panel-head"><h2>أعمدة الرحلة الستة</h2><span class="sub">THE SIX PILLARS</span></div>
-    <div class="pillars">
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="m3 20 8-15 3 6 2-3 5 12H3Z"/><path d="m8 20 3-5 3 5"/></svg></span><b>افعل الشيء الصعب</b><small>اختر ما تتجنّب وابدأ به</small></div>
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M5 19 18 6l2 2L7 21H5v-2Z"/><path d="m15 9 2 2M4 4h7M4 8h4"/></svg></span><b>لا تعتمد على ذاكرتك</b><small>اكتب خطتك والتزم بها</small></div>
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7l7-4 7 4M5 17l7 4 7-4"/><path d="m7 12 5-3 5 3-5 3-5-3Z"/></svg></span><b>ابنِ جسمك</b><small>حركة منتظمة ومتوازنة</small></div>
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M19 15.5A8 8 0 0 1 8.5 5 8 8 0 1 0 19 15.5Z"/><path d="M17 3v3M15.5 4.5h3"/></svg></span><b>أصلح نومك</b><small>راحة كافية وروتين هادئ</small></div>
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5M11 7v4l3 2"/></svg></span><b>استرجع انتباهك</b><small>قلّل التشتت واستعد تركيزك</small></div>
-      <div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></span><b>أثبت لنفسك</b><small>التزم دون انتظار التصفيق</small></div>
-    </div>
-  </section>
+<section class="panel"><div class="panel-head"><h2>أعمدة الرحلة الستة</h2><span class="sub">THE SIX PILLARS</span></div><div class="pillars">
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="m3 20 8-15 3 6 2-3 5 12H3Z"/><path d="m8 20 3-5 3 5"/></svg></span><b>افعل الشيء الصعب</b><small>اختر ما تتجنّب وابدأ به</small></div>
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M5 19 18 6l2 2L7 21H5v-2Z"/><path d="m15 9 2 2M4 4h7M4 8h4"/></svg></span><b>لا تعتمد على ذاكرتك</b><small>اكتب خطتك والتزم بها</small></div>
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7l7-4 7 4M5 17l7 4 7-4"/></svg></span><b>ابنِ جسمك</b><small>حركة منتظمة ومتوازنة</small></div>
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="M19 15.5A8 8 0 0 1 8.5 5 8 8 0 1 0 19 15.5Z"/></svg></span><b>أصلح نومك</b><small>راحة كافية وروتين هادئ</small></div>
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span><b>استرجع انتباهك</b><small>قلّل التشتت واستعد تركيزك</small></div>
+<div class="pillar"><span class="picon"><svg viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></span><b>أثبت لنفسك</b><small>التزم دون انتظار التصفيق</small></div>
+</div></section>
 </section>
 <section id="progressView" class="view" hidden>
-  <section class="panel"><div class="panel-head"><h2>تقدمك · PROGRESS</h2><span class="sub">90-DAY OVERVIEW</span></div>
-    <div class="dayrow"><div><div class="daynum" id="progressDay">— <span>/ 90 DAY</span></div><div class="sub">رحلتك تُقاس بما تنجزه، لا بمجرد مرور الأيام</div></div><div class="percent" id="progressPercent">0%</div></div>
-    <div class="track"><div class="fill" id="progressFill2"></div></div>
-    <div class="stats"><div class="stat"><b id="progressDone">0</b><span>مهام مكتملة اليوم</span></div><div class="stat"><b id="progressRemain">90</b><span>يوماً متبقياً</span></div><div class="stat"><b>90</b><span>يوم التحدي</span></div></div>
-  </section>
-</section>
-<section id="ideasView" class="view" hidden>
-  <section class="panel"><div class="panel-head"><div><span class="eyebrow">IDEA VAULT</span><h2 style="margin-top:5px">مساحة أهم 3 أفكار</h2></div><span class="sub">اكتبها وارجع لها</span></div>
-    <p class="sub" style="line-height:1.8">احتفظ هنا بثلاث أفكار تريد تطويرها أو تحويلها إلى خطوات خلال رحلتك.</p>
-    <div class="idea-fields"><label>01 <input id="idea1" maxlength="180" placeholder="الفكرة الأولى..."></label><label>02 <input id="idea2" maxlength="180" placeholder="الفكرة الثانية..."></label><label>03 <input id="idea3" maxlength="180" placeholder="الفكرة الثالثة..."></label></div>
-    <button class="primary" id="saveIdeas">حفظ الأفكار</button>
-  </section>
-</section>
+<section class="panel"><div class="panel-head"><h2>تقدمك · PROGRESS</h2><span class="sub">90-DAY OVERVIEW</span></div>
+<div class="dayrow"><div><div class="daynum" id="progressDay">— <span>/ 90 DAY</span></div><div class="sub">رحلتك تُقاس بما تنجزه، لا بمجرد مرور الأيام</div></div><div class="percent" id="progressPercent">0%</div></div>
+<div class="track"><div class="fill" id="progressFill2"></div></div>
+<div class="stats"><div class="stat"><b id="progressDone">0</b><span>مهام مكتملة اليوم</span></div><div class="stat"><b id="progressRemain">90</b><span>يوماً متبقياً</span></div><div class="stat"><b>90</b><span>يوم التحدي</span></div></div>
+</section></section>
 </div>
 <div id="notStarted" class="panel empty" style="display:none"><div class="picon" style="margin:auto"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M4 7l16 10M20 7 4 17"/></svg></div><h2>كل رحلة تبدأ بقرار.</h2><p>حدد يوم البداية، ثم ابدأ يومك الأول. لن نقيس مرور الوقت فقط؛ تقدمك سيُحسب من إنجازك الحقيقي.</p><button class="primary" id="startBtn">ابدأ رحلتي · START DAY 1</button></div>
 </div>
 </div>
 <nav class="bottom"><div class="nav"><button class="active" data-view="homeView"><strong><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3Z"/></svg></strong>الرئيسية</button><button data-view="dailyView"><strong><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h14"/><path d="m2 6 1 1 2-2M2 12l1 1 2-2M2 18l1 1 2-2"/></svg></strong>يومي</button><button data-view="journeyView"><strong><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="19" r="2"/></svg></strong>رحلتي</button><button data-view="progressView"><strong><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/></svg></strong>تقدمي</button><button id="navSettings"><strong><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.1h-2.6v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1A1.7 1.7 0 0 0 8 15a1.7 1.7 0 0 0-1.5-1H6.4v-2.6h.1A1.7 1.7 0 0 0 8 10a1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V5h2.6v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1v2.6h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></strong>الإعدادات</button></div></nav>
+<div class="modalback" id="ideasModal"><div class="modal"><div class="eyebrow">YOUR PRIORITIES</div><h2>ما الذي تريد إنجازه؟</h2><p>اكتب أهم ثلاث مهام تريد التركيز عليها. ويمكنك إضافة المزيد وقتما تحتاج.</p><div id="priorityFields" class="idea-fields"></div><button class="ghost" id="addPriority" type="button">＋ إضافة مهمة أخرى</button><div class="modal-actions"><button class="ghost" id="cancelIdeas">إلغاء</button><button class="primary" id="saveIdeas">حفظ المهام</button></div></div></div>
 <div class="modalback" id="modal"><div class="modal"><div class="eyebrow">YOUR 90-DAY COMMITMENT</div><h2 id="modalTitle">ابدأ رحلتك</h2><p>اختر تاريخ البداية. يمكنك تعديل أهدافك لاحقاً، لكن التزامك يبدأ بخطوة واضحة.</p><div class="field"><label for="startDate">تاريخ بداية الرحلة</label><input id="startDate" type="date"></div><div class="modal-actions"><button class="ghost" id="cancel">لاحقاً</button><button class="primary" id="confirm">ابدأ الآن</button></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -86,22 +78,26 @@ function save(){localStorage.setItem('winterArc90',JSON.stringify(data))}
 function dayKey(){return today()}
 function dayNo(){if(!data?.start)return 0;return Math.floor((new Date(today()+'T00:00:00')-new Date(data.start+'T00:00:00'))/86400000)+1}
 function tasksForToday(){return data?.days?.[dayKey()]||[]}
-function render(){const n=dayNo(),active=!!data?.start;renderIdeas(); $('dateLabel').textContent=new Date().toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'short'});$('dashboard').style.display=active?'block':'none';$('notStarted').style.display=active?'none':'block';if(!active)return;
-const tasks=tasksForToday();const done=tasks.filter(Boolean).length;const pct=Math.round(done/6*100);$('dayNumber').innerHTML=(n>90?'90':n)+' <span>/ 90 DAY</span>';$('remaining').textContent=n>90?'انتهت مدة الرحلة — راجع ما أنجزته':('متبقي '+Math.max(0,90-n)+' يوماً');$('percent').textContent=pct+'%';$('progressFill').style.width=pct+'%';$('completedCount').textContent=done+' / 6';$('weekCount').textContent=done+'/6';$('leftDays').textContent=Math.max(0,90-n);$('progressDay').innerHTML=(n>90?'90':n)+' <span>/ 90 DAY</span>';$('progressPercent').textContent=pct+'%';$('progressFill2').style.width=pct+'%';$('progressDone').textContent=done;$('progressRemain').textContent=Math.max(0,90-n);
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function priorities(){return Array.isArray(data?.priorities)?data.priorities:['','',''];}
+function renderPriorities(){const p=priorities();$('ideaPreview').innerHTML=p.slice(0,3).map((v,i)=>'<div class="idea-chip '+(v?'':'empty')+'"><em>0'+(i+1)+'</em><span>'+(v?escapeHtml(v):'اضغط لإضافة المهمة')+'</span></div>').join('');}
+function renderPriorityFields(){const p=priorities();$('priorityFields').innerHTML=p.map((v,i)=>'<label><span>'+String(i+1).padStart(2,'0')+'</span><input maxlength="180" data-priority="'+i+'" value="'+escapeHtml(v)+'" placeholder="اكتب المهمة التي تريد إنجازها...">'+(i>=3?'<button class="priority-remove" type="button" data-remove="'+i+'" aria-label="حذف">×</button>':'')+'</label>').join('');}
+function render(){const n=dayNo(),active=!!data?.start; $('dateLabel').textContent=new Date().toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'short'});$('dashboard').style.display=active?'block':'none';$('notStarted').style.display=active?'none':'block';renderPriorities();if(!active)return;
+const tasks=tasksForToday(),done=tasks.filter(Boolean).length,pct=Math.round(done/6*100);
+$('dayNumber').innerHTML=(n>90?'90':n)+' <span>/ 90 DAY</span>';$('remaining').textContent=n>90?'انتهت مدة الرحلة — راجع ما أنجزته':('متبقي '+Math.max(0,90-n)+' يوماً');$('percent').textContent=pct+'%';$('progressFill').style.width=pct+'%';$('completedCount').textContent=done+' / 6';$('weekCount').textContent=done+'/6';$('leftDays').textContent=Math.max(0,90-n);$('progressDay').innerHTML=(n>90?'90':n)+' <span>/ 90 DAY</span>';$('progressPercent').textContent=pct+'%';$('progressFill2').style.width=pct+'%';$('progressDone').textContent=done;$('progressRemain').textContent=Math.max(0,90-n);
 $('tasks').innerHTML=defaults.map((t,i)=>'<button class="task '+(tasks[i]?'done':'')+'" data-i="'+i+'"><span class="check">'+(tasks[i]?'✓':'')+'</span><span class="tasktxt"><b>'+t[0]+'</b><small>'+t[1]+'</small></span><span class="tag">'+t[2]+'</span></button>').join('');
-document.querySelectorAll('.task').forEach(el=>el.addEventListener('click',()=>{const i=+el.dataset.i;const arr=tasksForToday();arr[i]=!arr[i];data.days[dayKey()]=arr;save();render();if(arr[i])toast('أحسنت. خطوة أخرى للأمام.')}));}
+document.querySelectorAll('.task').forEach(el=>el.addEventListener('click',()=>{const i=+el.dataset.i,arr=tasksForToday();arr[i]=!arr[i];data.days[dayKey()]=arr;save();render();if(arr[i])toast('أحسنت. خطوة أخرى للأمام.')}));}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1900)}
 function openModal(){ $('startDate').value=data?.start||today();$('modal').classList.add('show')}
 $('startBtn').onclick=openModal;$('settings').onclick=openModal;$('navSettings').onclick=openModal;$('cancel').onclick=()=>$('modal').classList.remove('show');
 $('confirm').onclick=()=>{const d=$('startDate').value;if(!d)return toast('اختر تاريخ البداية أولاً');data=data||{days:{}};data.start=d;data.days=data.days||{};save();$('modal').classList.remove('show');render();toast('بدأت رحلتك. DAY 1.')};
 function showView(id){document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!==id);document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'});}
 document.querySelectorAll('.nav button[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
-function readIdeas(){return data?.ideas||['','',''];}
-function renderIdeas(){const ideas=readIdeas();$('ideaPreview').innerHTML=ideas.map((v,i)=>'<div class="idea-chip '+(v?'':'empty')+'"><em>0'+(i+1)+'</em><span>'+(v?escapeHtml(v):'مساحة فارغة لفكرتك')+'</span></div>').join('');['idea1','idea2','idea3'].forEach((id,i)=>$(id).value=ideas[i]||'');}
-function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-$('editIdeas').onclick=()=>{renderIdeas();showView('ideasView')};
-$('saveIdeas').onclick=()=>{data=data||{days:{}};data.ideas=[ $('idea1').value.trim(),$('idea2').value.trim(),$('idea3').value.trim() ];save();renderIdeas();showView('homeView');toast('تم حفظ أفكارك');};
-
-if(active)showView('homeView');render();
+$('openIdeas').onclick=()=>{$('ideasModal').classList.add('show');renderPriorityFields()};
+$('cancelIdeas').onclick=()=>$('ideasModal').classList.remove('show');
+$('addPriority').onclick=()=>{const values=[...document.querySelectorAll('[data-priority]')].map(x=>x.value);data=data||{days:{}};data.priorities=values;data.priorities.push('');renderPriorityFields();};
+$('priorityFields').addEventListener('click',e=>{const btn=e.target.closest('[data-remove]');if(!btn)return;const i=+btn.dataset.remove;const vals=[...document.querySelectorAll('[data-priority]')].map(x=>x.value);vals.splice(i,1);data=data||{days:{}};data.priorities=vals;renderPriorityFields();});
+$('saveIdeas').onclick=()=>{const values=[...document.querySelectorAll('[data-priority]')].map(x=>x.value.trim());data=data||{days:{}};data.priorities=values;save();renderPriorities();$('ideasModal').classList.remove('show');toast('تم حفظ مهامك')};
+if(data?.start)showView('homeView');render();
 </script>
 </body></html>
